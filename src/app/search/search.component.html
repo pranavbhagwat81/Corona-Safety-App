@@ -1,0 +1,31 @@
+<div class="container">
+    
+<div>
+    <label for=""> State </label>
+    <br>
+    <select (change)="setState($event.target.value)"  class="custom-select">
+        <option  *ngFor="let stateArr of regionData.states let i = index" >
+              {{ stateArr.state }}
+        </option>
+      </select>
+</div>
+
+<div>
+    <label for=""> District </label>
+    <br>
+    <select (change)="setDistrict($event.target.value)" class="custom-select">
+        
+        <option  *ngFor="let district of getDistricts() let i = index" >
+            {{ district }}
+      </option>
+        
+      </select>
+</div>
+    
+     
+
+</div>
+
+
+
+
