@@ -1,5 +1,22 @@
-<div class="container">
-  <br><br>
+
+
+<div id="main-container" class="container">
+
+    <div id="sticky-top" class="row" >
+      <div class="col">
+        <div class="fixed-top">
+          <h1><a  href="https://covid19india.org">DATA AS PER COVID19 INDIA</a></h1>
+          </div>
+      
+      </div>
+    </div>
+  
+  
+  
+    <div class="row">
+      <div class="col">
+
+        <br><br>
   <h2>CORONA STATUS CHECK </h2>
   <br>
   <app-search (change) = "setViewFlag('false')" (stateEmit)="setState($event)" (districtEmit)="setDistrict($event)" ></app-search>
@@ -13,7 +30,7 @@
     <br><br><br>
 
     <ng-container *ngIf="viewFlag"> 
-    <h3 *ngIf="filteredData.length"> Total Patients in your area : {{filteredData.length}} </h3>
+    <h3 *ngIf="filteredData.length"> Total Cases in {{searchDistrictTerm}} : {{filteredData.length}} </h3>
     <h3 *ngIf="filteredData.length"> Recovered : {{recovered}} </h3>
     <h3 *ngIf="filteredData.length"> Hospitalized : {{hospitalized}} </h3>
     <h3 *ngIf="filteredData.length"> Status not Disclosed : {{statusNotDisclosed}} </h3>
@@ -29,10 +46,15 @@
     
     </ng-container>
 
-  
-  
-  
+      </div>
+    </div>
+
+
   
 
+  
+  
+  
+  
 
 </div>

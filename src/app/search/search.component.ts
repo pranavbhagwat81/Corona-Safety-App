@@ -950,6 +950,7 @@ export class SearchComponent implements OnInit {
     
    }else{
       this.stateEmit.emit("");
+      this.districtEmit.emit("");
       this.change.emit(false);
    }
     
