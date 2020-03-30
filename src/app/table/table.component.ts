@@ -36,7 +36,6 @@ export class TableComponent implements OnInit {
     }
 
     getGenderRole(gender:string){
-      console.log(gender);
       if(gender == "F"){
         return "female icon";
       }else if(gender == "M"){
@@ -45,7 +44,17 @@ export class TableComponent implements OnInit {
         return ""
       }
         
+
       
+    }
+
+    
+    getAccordionId(status:string){
+      if(status == "Recovered"){
+        return "colorMarkGreen"
+      }else if(status == "Hospitalized"){
+        return "colorMarkRed"
+      }
     }
 
 }

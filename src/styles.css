@@ -1,2 +1,12 @@
+
+
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/semantic-ui-css/semantic.css';
+
+#colorMarkGreen{
+    background-color: #90ee90;
+  }
+
+#colorMarkRed{
+    background-color: #ff3b3b;
+}

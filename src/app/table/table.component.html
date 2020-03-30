@@ -1,9 +1,8 @@
 
 <ng-container *ngIf="data.length" >
-
-  <div   *ngFor="let item of data let i = index" (click)="setActiveIndex(i)"  class="ui styled accordion"> 
+  <div   *ngFor="let item of data let i = index" (click)="setActiveIndex(i)"   class="ui styled accordion"> 
      
-    <div [ngClass]="{'active': i==activeIndex}" class="title">
+    <div [id]="getAccordionId(item.currentstatus)"  [ngClass]="{'active': i==activeIndex}" class="title">
         <i class="dropdown icon"></i>
         <i [ngClass]="getGenderRole(item.gender)"></i> Patient No. {{item.patientnumber}}
       </div>
@@ -61,3 +60,15 @@
     <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
   </div>
 </div> -->
+
+
+
+
+
+
+
+
+
+
+<!-- 
+[id]="getAccordionId(item.currentstatus)" -->

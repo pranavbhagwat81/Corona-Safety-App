@@ -7,6 +7,10 @@ import { CovidDataService } from './covid-data.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  recovered:number;
+  hospitalized:number;
+  statusNotDisclosed:number;
+
   viewFlag:boolean;
   status = false;
   searchTerm:string = '';
@@ -56,6 +60,7 @@ export class AppComponent {
         }
   
         console.log(this.filteredData);
+        this.getRecoveryStatus();
         this.status = true;
   
       });
@@ -85,6 +90,27 @@ export class AppComponent {
     }else{
       this.viewFlag = true;
     }
+  }
+
+  getRecoveryStatus(){
+    this.recovered = 0;
+    this.hospitalized = 0;
+    this.statusNotDisclosed =  0;
+
+    for (let index = 0; index < this.filteredData.length; index++) {
+      
+      console.log(this.filteredData[index].currentstatus);
+
+      if(this.filteredData[index].currentstatus == 'Recovered'){
+          this.recovered++;
+      }else if(this.filteredData[index].currentstatus == 'Hospitalized'){
+          this.hospitalized++;
+      }else if(this.filteredData[index].currentstatus == '') {
+          this.statusNotDisclosed++;
+      }
+      
+    }
+
   }
 
 

@@ -3,7 +3,7 @@
     <br>
     <select (change)="setState($event.target.value)"  class="custom-select">
         <option></option>
-        <option  *ngFor="let stateArr of regionData.states let i = index" >
+        <option *ngFor="let stateArr of regionData.states let i = index" >
               {{ stateArr.state }}
         </option>
       </select>
