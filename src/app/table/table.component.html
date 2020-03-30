@@ -1,0 +1,63 @@
+
+<ng-container *ngIf="data.length" >
+
+  <div   *ngFor="let item of data let i = index" (click)="setActiveIndex(i)"  class="ui styled accordion"> 
+     
+    <div [ngClass]="{'active': i==activeIndex}" class="title">
+        <i class="dropdown icon"></i>
+        <i [ngClass]="getGenderRole(item.gender)"></i> Patient No. {{item.patientnumber}}
+      </div>
+      <div [ngClass]="{'active': i==activeIndex}" class="content">
+        <p>
+           <span><b>History  :</b></span> {{item.notes}}
+           <br>
+           <span><b>Current Status :</b></span> {{item.currentstatus}}
+           <br>
+           <span><b>Date Announced :</b></span> {{item.dateannounced}}
+           <br>
+           <span><b>Gender  :</b></span> {{item.gender}}
+           <br>
+            <span><b>Source 1  :</b></span> <a target="_blank" [href]="item.source1">{{item.source1}}</a>
+            <br>
+           <span><b>Source 2  :</b></span> <a target="_blank" [href]="item.source2">{{item.source1}}</a>
+            <br>
+           <span><b>Source 3  :</b></span> <a target="_blank" [href]="item.source3">{{item.source1}}</a>
+           
+           <br>
+           <span><b>Status Change Date  :</b></span> {{item.statuschangedate}}
+
+        </p>
+      </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+</div>
+
+
+</ng-container>
+
+
+
+
+<!-- <div class="ui styled fluid accordion">
+  <div class="title">
+    <i class="dropdown icon"></i>
+    Patient No.44 , Recovered on 25/03/2020 , Travelled from Dubai on 1 March, Husband of P45
+  </div>
+  <div class="content">
+    <p class="transition hidden">A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+    What kinds of dogs are there?
+  </div>
+  <div class="content">
+    <p>There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.</p>
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+    How do you acquire a dog?
+  </div>
+  <div class="content">
+    <p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+    <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
+  </div>
+</div> -->

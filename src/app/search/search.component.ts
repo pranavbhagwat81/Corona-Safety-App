@@ -8,6 +8,7 @@ import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 export class SearchComponent implements OnInit {
    @Output() stateEmit = new EventEmitter();
    @Output() districtEmit = new EventEmitter();
+   @Output() change = new EventEmitter();
 
   stateSelect:string = '';
   stateArr;
@@ -939,19 +940,26 @@ export class SearchComponent implements OnInit {
     this.stateSelect = state;
     this.districtSelect = [];
 
-    let districtNameArray = this.regionData.states[this.getStateIndex(state)][this.stateSelect];
+   if(state != ""){
+      let districtNameArray = this.regionData.states[this.getStateIndex(state)][this.stateSelect];
     
     for (let index = 0; index < districtNameArray.length; index++) {
          this.districtSelect.push(districtNameArray[index]);
-       
         
     }
+    
+   }else{
+      this.stateEmit.emit("");
+      this.change.emit(false);
+   }
+    
   
   }
 
   setDistrict(district:string){
     this.stateEmit.emit(this.stateSelect);
     this.districtEmit.emit(district);
+    this.change.emit(false);
   }
 
   getDistricts(){
