@@ -8,5 +8,10 @@
   }
 
 #colorMarkRed{
-    background-color: #ff3b3b;
+    background-color: #ffc107;
+}
+
+#okbutton{
+  position: absolute;
+  margin:auto;
 }

@@ -1,6 +1,6 @@
 <div class="container">
   <br><br>
-  <h2>CORONA SAFETY CHECK </h2>
+  <h2>CORONA STATUS CHECK </h2>
   <br>
   <app-search (change) = "setViewFlag('false')" (stateEmit)="setState($event)" (districtEmit)="setDistrict($event)" ></app-search>
 
@@ -8,7 +8,7 @@
 
     <ng-container *ngIf="searchStateTerm && searchDistrictTerm">
 
-    <button type="button" class="btn btn-primary" (click) = "showData()"> SAFETY CHECK </button>
+    <button id="okbutton" type="button" class="btn btn-primary" (click) = "showData()"> OK </button>
 
     <br><br><br>
 
@@ -19,7 +19,8 @@
     <h3 *ngIf="filteredData.length"> Status not Disclosed : {{statusNotDisclosed}} </h3>
     
 
-    <h3 *ngIf="filteredData.length == 0  && status"> You are safe. No cases reported so far. </h3>  
+    <h3 *ngIf="filteredData.length == 0  && status"> <b>No cases reported so far. <br>
+      Follow government guidelines. <br> Keep yourself safe from COVID-19.</b> </h3>  
     
       <app-table  [data]="filteredData"></app-table>
     </ng-container>
