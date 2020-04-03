@@ -7,6 +7,14 @@ import { CovidDataService } from './covid-data.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  visibleFlag = true;
+
+  confirmedSummary:number;
+  activeSummary:number;
+  recoveredSummary:number;
+  deceasedSummary:number;
+
   recovered:number;
   hospitalized:number;
   deceased : number;
@@ -21,13 +29,33 @@ export class AppComponent {
   searchCityTerm:string = '';
 
   totalData = [];
+  startingData = [];
   filteredData = [];
 
   title = 'Corona-Safety-App';
 
   constructor(private covid:CovidDataService){
-
+   
   }
+
+ ngOnInit(): void {
+  console.log("In constructor ");
+  this.covid.getStartingData().subscribe((response:any)=>{
+    this.startingData = response;
+    console.log(this.startingData);
+
+    for(let i=0;i<this.startingData.length;i++){
+      if(this.startingData[i].state == "Total"){
+              this.confirmedSummary = this.startingData[i].confirmed;
+              this.activeSummary    = this.startingData[i].active;
+              this.recoveredSummary = this.startingData[i].recovered;
+              this.deceasedSummary  = this.startingData[i].deaths;
+      } 
+  }
+
+  });
+ }
+
 
   showData(){
 

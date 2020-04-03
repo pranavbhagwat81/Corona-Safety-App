@@ -10,7 +10,7 @@ import { TableComponent } from './table/table.component';
   declarations: [
     AppComponent,
     SearchComponent,
-    TableComponent
+    TableComponent,
   ],
   imports: [
     BrowserModule,

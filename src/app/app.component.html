@@ -20,9 +20,11 @@
 
         <br><br><br><br>
   <h2>CORONA STATUS CHECK </h2>
-  <br>
-  <br>
-  <br>
+  
+        <h3 style="color: red;">Confirmed : {{confirmedSummary}}</h3>
+        <h3 style="color: blue;">Active : {{activeSummary}}</h3>
+        <h3 style="color: green;">Recovered : {{recoveredSummary}}</h3>
+        <h3 style="color: grey;">Deceased : {{deceasedSummary}}</h3>
   <br>
   <app-search (change) = "setViewFlag('false')" (stateEmit)="setState($event)" (districtEmit)="setDistrict($event)" ></app-search>
 
@@ -30,11 +32,11 @@
 
     <ng-container *ngIf="searchStateTerm && searchDistrictTerm">
 
-    <button id="okbutton" type="button" class="btn btn-primary" (click) = "showData()"> OK </button>
-
+     <a href="#Patientstable"><button  id="okbutton" type="button" class="btn btn-primary"  (click) = "showData()"> OK </button> </a>   
+      
     <br><br><br>
-
-    <ng-container *ngIf="viewFlag"> 
+    <div id="Patientstable">
+    <ng-container  *ngIf="viewFlag"> 
     <h3 *ngIf="filteredData.length"> Total Cases in {{searchDistrictTerm}} : {{filteredData.length}} </h3>
     <h3 *ngIf="filteredData.length"> Recovered : {{recovered}} </h3>
     <h3 *ngIf="filteredData.length"> Hospitalized : {{hospitalized}} </h3>
@@ -45,12 +47,13 @@
     <h3 *ngIf="filteredData.length == 0  && status"> <b>No cases reported so far. <br>
       Follow government guidelines. <br> Keep yourself safe from COVID-19.</b> </h3>  
     
-      <div>
-        <app-table   [data]="filteredData"></app-table>
+      <div >
+        <app-table    [data]="filteredData"></app-table>
       </div>
       
     
     </ng-container>
+    </div>
     
     
     
