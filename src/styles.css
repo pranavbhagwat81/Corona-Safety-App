@@ -7,8 +7,12 @@
     background-color: #90ee90;
   }
 
-#colorMarkRed{
+#colorMarkYellow{
     background-color: #ffc107;
+}
+
+#colorMarkRed{
+  background-color :red;
 }
 
 #okbutton{
@@ -16,18 +20,23 @@
   margin:auto;
 }
 
-#sticky-top {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  background-color: grey;
-  padding: 50px;
-  font-size: 20px;
-  z-index:1000;
+.fixed-top {
+  background-color: #DCDCDC;
 }
 
 #main-container{
-margin: auto;
-  
-  
+  display: inline-block;
+}
+
+#table-container{
+  display: inline-block
+}
+
+#container-wrapper{
+  text-align: center
+}
+
+.box.flex {
+  display: flex;
+  justify-content: center;
 }

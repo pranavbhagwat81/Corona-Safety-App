@@ -499,7 +499,7 @@ export class SearchComponent implements OnInit {
              "Jalna",
              "Kolhapur",
              "Latur",
-             "Mumbai City",
+             "Mumbai",
              "Mumbai Suburban",
              "Nagpur",
              "Nanded",

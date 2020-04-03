@@ -53,6 +53,8 @@ export class TableComponent implements OnInit {
       if(status == "Recovered"){
         return "colorMarkGreen"
       }else if(status == "Hospitalized"){
+        return "colorMarkYellow"
+      }else if(status == "Deceased"){
         return "colorMarkRed"
       }
     }

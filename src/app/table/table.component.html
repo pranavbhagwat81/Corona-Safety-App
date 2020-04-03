@@ -1,6 +1,6 @@
 
-<ng-container *ngIf="data.length" >
-  <div   *ngFor="let item of data let i = index" (click)="setActiveIndex(i)"   class="ui styled accordion"> 
+<ng-container  *ngIf="data.length" >
+  <div id="main-container"   *ngFor="let item of data let i = index" (click)="setActiveIndex(i)"   class="ui styled accordion"> 
      
     <div [id]="getAccordionId(item.currentstatus)"  [ngClass]="{'active': i==activeIndex}" class="title">
         <i class="dropdown icon"></i>
@@ -18,9 +18,9 @@
            <br>
             <span><b>Source 1  :</b></span> <a target="_blank" [href]="item.source1">{{item.source1}}</a>
             <br>
-           <span><b>Source 2  :</b></span> <a target="_blank" [href]="item.source2">{{item.source1}}</a>
+           <span><b>Source 2  :</b></span> <a target="_blank" [href]="item.source2">{{item.source2}}</a>
             <br>
-           <span><b>Source 3  :</b></span> <a target="_blank" [href]="item.source3">{{item.source1}}</a>
+           <span><b>Source 3  :</b></span> <a target="_blank" [href]="item.source3">{{item.source3}}</a>
            
            <br>
            <span><b>Status Change Date  :</b></span> {{item.statuschangedate}}

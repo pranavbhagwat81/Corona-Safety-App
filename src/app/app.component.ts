@@ -9,6 +9,7 @@ import { CovidDataService } from './covid-data.service';
 export class AppComponent {
   recovered:number;
   hospitalized:number;
+  deceased : number;
   statusNotDisclosed:number;
 
   viewFlag:boolean;
@@ -95,6 +96,7 @@ export class AppComponent {
   getRecoveryStatus(){
     this.recovered = 0;
     this.hospitalized = 0;
+    this.deceased = 0;
     this.statusNotDisclosed =  0;
 
     for (let index = 0; index < this.filteredData.length; index++) {
@@ -107,6 +109,8 @@ export class AppComponent {
           this.hospitalized++;
       }else if(this.filteredData[index].currentstatus == '') {
           this.statusNotDisclosed++;
+      }else if(this.filteredData[index].currentstatus == 'Deceased'){
+          this.deceased++;
       }
       
     }
