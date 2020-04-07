@@ -1,7 +1,7 @@
 <div>
-    <label for=""> State </label>
+    <label for="state-dropdown"> State </label>
     <br>
-    <select (change)="setState($event.target.value)"  class="custom-select">
+    <select (change)="setState($event.target.value)"  class="custom-select" id="state-dropdown">
         <option></option>
         <option *ngFor="let stateArr of regionData.states let i = index" >
               {{ stateArr.state }}
@@ -12,9 +12,9 @@
 <div>
     <ng-container *ngIf="stateSelect">
 
-        <label for=""> District </label>
+        <label for="district-dropdown"> District </label>
         <br>
-        <select (change)="setDistrict($event.target.value)" class="custom-select">
+        <select (change)="setDistrict($event.target.value)" class="custom-select" id="district-dropdown">
             <option></option>
            
             
@@ -28,10 +28,3 @@
     </ng-container>
     
 </div>
-    
-     
-
-
-
-
-
