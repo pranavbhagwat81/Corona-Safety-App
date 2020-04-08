@@ -25,6 +25,10 @@ export class TableComponent implements OnInit {
       return this.flag;
     }
 
+    isExpanded(i:number):boolean {
+		return i == this.activeIndex;
+	}
+
     setActiveIndex(i:number){
       console.log(i);
       this.activeIndex = i;
@@ -49,13 +53,16 @@ export class TableComponent implements OnInit {
     }
 
     
-    getAccordionId(status:string){
+    getWrapperId(i:number):string {
+		return "wrapper-accordion-" + i;
+	}
+    getAccordionClass(status:string){
       if(status == "Recovered"){
-        return "colorMarkGreen"
+        return "color-mark-green"
       }else if(status == "Hospitalized"){
-        return "colorMarkYellow"
+        return "color-mark-yellow"
       }else if(status == "Deceased"){
-        return "colorMarkRed"
+        return "color-mark-red"
       }
     }
 
