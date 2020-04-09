@@ -1,9 +1,9 @@
 
 <ng-container  *ngIf="data.length" >
-  <div id="main-container"   *ngFor="let item of data let i = index" (click)="setActiveIndex(i)"   class="ui styled accordion"> 
-     
-    <div [id]="getAccordionId(item.currentstatus)"  [ngClass]="{'active': i==activeIndex}" class="title">
-        <i class="dropdown icon"></i>
+  <span aria-hidden="true" id="opens-in-new-window" class="element-invisible">(Opens in new window)</span>
+  <div [id]="getWrapperId(i)" *ngFor="let item of data let i = index" class="ui styled accordion accordion-container"> 
+    <div role="button" tabindex="0" [attr.aria-expanded]="isExpanded(i)" (click)="setActiveIndex(i)" [className]="getAccordionClass(item.currentstatus)" [ngClass]="{'active': i==activeIndex}" class="title">
+        <i aaria-hidden="true" class="dropdown icon"></i>
         <i [ngClass]="getGenderRole(item.gender)"></i> Patient No. {{item.patientnumber}}
       </div>
       <div [ngClass]="{'active': i==activeIndex}" class="content">
@@ -16,11 +16,11 @@
            <br>
            <span><b>Gender  :</b></span> {{item.gender}}
            <br>
-            <span><b>Source 1  :</b></span> <a target="_blank" [href]="item.source1">{{item.source1}}</a>
+            <span><b>Source 1  :</b></span> <a aria-describedby="opens-in-new-window" target="_blank" [href]="item.source1">{{item.source1}}</a>
             <br>
-           <span><b>Source 2  :</b></span> <a target="_blank" [href]="item.source2">{{item.source2}}</a>
+           <span><b>Source 2  :</b></span> <a aria-describedby="opens-in-new-window" target="_blank" [href]="item.source2">{{item.source2}}</a>
             <br>
-           <span><b>Source 3  :</b></span> <a target="_blank" [href]="item.source3">{{item.source3}}</a>
+           <span><b>Source 3  :</b></span> <a aria-describedby="opens-in-new-window" target="_blank" [href]="item.source3">{{item.source3}}</a>
            
            <br>
            <span><b>Status Change Date  :</b></span> {{item.statuschangedate}}

@@ -7,7 +7,7 @@
     <div  class="row" >
       <div class="col">
         <div class="fixed-top">
-          <h1><a  href="https://www.covid19india.org/faq">DATA AS PER COVID19 INDIA</a></h1>
+          <h1>DATA AS PER <a  href="https://www.covid19india.org/faq">COVID19 INDIA</a></h1>
           </div>
       
       </div>
@@ -32,10 +32,10 @@
 
     <ng-container *ngIf="searchStateTerm && searchDistrictTerm">
 
-     <a href="#Patientstable"><button  id="okbutton" type="button" class="btn btn-primary"  (click) = "showData()"> OK </button> </a>   
+     <button  id="okbutton" type="button" class="btn btn-primary"  (click) = "showData()"> OK </button> 
       
     <br><br><br>
-    <div id="Patientstable">
+    <div tabindex="-1" id="Patientstable">
     <ng-container  *ngIf="viewFlag"> 
     <h3 *ngIf="filteredData.length"> Total Cases in {{searchDistrictTerm}} : {{filteredData.length}} </h3>
     <h3 *ngIf="filteredData.length"> Recovered : {{recovered}} </h3>

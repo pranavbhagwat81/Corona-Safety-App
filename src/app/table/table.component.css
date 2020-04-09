@@ -1,0 +1,22 @@
+.color-mark-green {
+    background-color: #90ee90;
+  }
+
+.color-mark-yellow {
+    background-color: #ffc107;
+}
+
+.color-mark-red {
+  background-color :red;
+}
+
+.accordion-container{
+  display: inline-block;
+}
+
+.element-invisible {
+	position:absolute;
+	left: -1000px;
+	height: 0px;
+	width: 0px;
+}

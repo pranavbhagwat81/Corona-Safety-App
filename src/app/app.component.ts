@@ -91,6 +91,7 @@ export class AppComponent {
         console.log(this.filteredData);
         this.getRecoveryStatus();
         this.status = true;
+		document.getElementById("Patientstable").focus();
   
       });
     }
