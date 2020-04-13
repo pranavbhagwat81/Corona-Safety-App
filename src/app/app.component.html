@@ -1,73 +1,73 @@
 
 <div id="container-wrapper">
-<div id="main-container" class="container">
-
-    <div  class="row"  role="region" aria-label="Introduction">
-      <div class="col">
-        <div class="fixed-top">
-          <h1>An accessible way to access Corona statistics in India</h1>
-		  <p>This app allows to get data about corona infections in your State/District. If you want to directly get access to corona statistics, use your quick navigation keys to navigate to heading level 2 and find &quot;Search for corona cases&quot;. Continue reading to know about contributers to this app.</p>
-		  <p>Thanks to <a href="https://in.linkedin.com/in/pranav-bhagwat-520266107?trk=people-guest_people_search-card">Pranav bhagwat</a>, our colleague who first built this app. Pranav is part of our team working on Boardwalktech Platform. He built this app using Angular. Our Accessibility team came forward to make Accessibility enhancements and then we thought to host it on Tekvision domain.</p>
-		  <p>If you have any suggestions to improve accessibility, post your suggestions on our <a href="https://tekvision.in/contact/">Contact Us</a> page. We will be more than happy to integrate those.</p>
-		  </div>
-      
-      </div>
-    </div>
+  <div id="main-container" class="container">
   
-  
-  
-    <div class="row" role="region" aria-label="Corona Status Check">
-      <div class="col">
-
+      <div  class="row credits"  role="region" aria-label="Introduction">
+        <div class="col">
+          <div>
+            <h1>An accessible way to access Corona statistics in India</h1>
+        <p>This app allows to get data about corona infections in your State/District. If you want to directly get access to corona statistics, use your quick navigation keys to navigate to heading level 2 and find &quot;Search for corona cases&quot;. Continue reading to know about contributers to this app.</p>
+        <p>Thanks to <a href="https://in.linkedin.com/in/pranav-bhagwat-520266107?trk=people-guest_people_search-card">Pranav bhagwat</a>, our colleague who first built this app. Pranav is part of our team working on Boardwalktech Platform. He built this app using Angular. Our Accessibility team came forward to make Accessibility enhancements and then we thought to host it on Tekvision domain.</p>
+        <p>If you have any suggestions to improve accessibility, post your suggestions on our <a href="https://tekvision.in/contact/">Contact Us</a> page. We will be more than happy to integrate those.</p>
+        </div>
         
-  <h2>CORONA STATUS CHECK  for India</h2>
-<p>DATA AS PER <a  href="https://www.covid19india.org/faq">COVID19 INDIA</a></p>
-          
-        <h3 style="color: red;">Confirmed : {{confirmedSummary}}</h3>
-        <h3 style="color: blue;">Active : {{activeSummary}}</h3>
-        <h3 style="color: green;">Recovered : {{recoveredSummary}}</h3>
-        <h3 style="color: grey;">Deceased : {{deceasedSummary}}</h3>
-  <br>
-  <app-search (change) = "setViewFlag('false')" (stateEmit)="setState($event)" (districtEmit)="setDistrict($event)" ></app-search>
-
-  <br>
-
-    <ng-container *ngIf="searchStateTerm && searchDistrictTerm">
-
-     <button  id="okbutton" type="button" class="btn btn-primary"  (click) = "showData()"> OK </button> 
-      
-    <br><br><br>
-    <div tabindex="-1" id="Patientstable">
-    <ng-container  *ngIf="viewFlag"> 
-    <h3 *ngIf="filteredData.length"> Total Cases in {{searchDistrictTerm}} : {{filteredData.length}} </h3>
-    <h3 *ngIf="filteredData.length"> Recovered : {{recovered}} </h3>
-    <h3 *ngIf="filteredData.length"> Hospitalized : {{hospitalized}} </h3>
-    <h3 *ngIf="filteredData.length"> Deaths : {{deceased}} </h3>
-    <h3 *ngIf="filteredData.length"> Status not Disclosed : {{statusNotDisclosed}} </h3>
-    
-
-    <h3 *ngIf="filteredData.length == 0  && status"> <b>No cases reported so far. <br>
-      Follow government guidelines. <br> Keep yourself safe from COVID-19.</b> </h3>  
-    
-      <div >
-        <app-table    [data]="filteredData"></app-table>
+        </div>
       </div>
-      
-    
-    </ng-container>
-    </div>
     
     
     
-    </ng-container>
-
-      </div>
-    </div>
-
-
+      <div class="row" role="region" aria-label="Corona Status Check">
+        <div class="col ">
   
+          
+    <h2>CORONA STATUS CHECK  for India</h2>
+  <p>DATA AS PER <a  href="https://www.covid19india.org/faq">COVID19 INDIA</a></p>
+            
+          <h3 style="color: red;">Confirmed : {{confirmedSummary}}</h3>
+          <h3 style="color: blue;">Active : {{activeSummary}}</h3>
+          <h3 style="color: green;">Recovered : {{recoveredSummary}}</h3>
+          <h3 style="color: grey;">Deceased : {{deceasedSummary}}</h3>
+    <br>
+    <app-search (change) = "setViewFlag('false')" (stateEmit)="setState($event)" (districtEmit)="setDistrict($event)" ></app-search>
+  
+    <br>
+  
+      <ng-container *ngIf="searchStateTerm && searchDistrictTerm">
+  
+       <button  id="okbutton" type="button" class="btn btn-primary"  (click) = "showData()"> OK </button> 
+        
+      <br><br><br>
+      <div tabindex="-1" id="Patientstable">
+      <ng-container  *ngIf="viewFlag"> 
+      <h3 *ngIf="filteredData.length"> Total Cases in {{searchDistrictTerm}} : {{filteredData.length}} </h3>
+      <h3 *ngIf="filteredData.length"> Recovered : {{recovered}} </h3>
+      <h3 *ngIf="filteredData.length"> Hospitalized : {{hospitalized}} </h3>
+      <h3 *ngIf="filteredData.length"> Deaths : {{deceased}} </h3>
+      <h3 *ngIf="filteredData.length"> Status not Disclosed : {{statusNotDisclosed}} </h3>
+      
 
-   </div>
-
-
-  </div>
+      <h3 *ngIf="filteredData.length == 0  && status"> <b>No cases reported so far. <br>
+        Follow government guidelines. <br> Keep yourself safe from COVID-19.</b> </h3>  
+      
+        <div >
+          <app-table    [data]="filteredData"></app-table>
+        </div>
+        
+      
+      </ng-container>
+      </div>
+      
+      
+      
+      </ng-container>
+  
+        </div>
+      </div>
+  
+  
+    
+  
+     </div>
+  
+  
+    </div>
