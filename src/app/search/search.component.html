@@ -1,12 +1,14 @@
+<h2>Search for corona cases</h2>
 <div>
     <label for="state-dropdown"> State </label>
     <br>
-    <select (change)="setState($event.target.value)"  class="custom-select" id="state-dropdown">
+    <select aria-describedby="on-input-change" (change)="setState($event.target.value)"  class="custom-select" id="state-dropdown">
         <option></option>
         <option *ngFor="let stateArr of regionData.states let i = index" >
               {{ stateArr.state }}
         </option>
       </select>
+		<div  id="on-input-change">On selecting state, district dropdown and submit button appear</div>
 </div>
 
 <div>

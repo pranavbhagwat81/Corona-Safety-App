@@ -1,8 +1,8 @@
 # Corona-Safety-App
 
-# Getting Started
+## Getting Started
 
-Angular app to get the corona virus updates depending on the state and district.
+An accessible angular app to get the corona virus updates depending on the state and district.
 
 ## Get the Code
 ```
@@ -21,7 +21,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ##Deploying and hosting an Angular 2 or 4 project on a server.
 
