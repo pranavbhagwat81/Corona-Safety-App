@@ -146,5 +146,7 @@ export class AppComponent {
 
   }
 
-
+getDistrictLabel() {
+	return this.searchDistrictTerm + " District Data";
+}
 }

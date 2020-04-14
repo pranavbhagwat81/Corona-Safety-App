@@ -66,4 +66,8 @@ export class TableComponent implements OnInit {
       }
     }
 
+    getStatusId(i:number):string {
+		return "current-status-" + i;
+	}
+
 }
