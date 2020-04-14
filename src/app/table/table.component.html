@@ -2,7 +2,7 @@
 <ng-container  *ngIf="data.length" >
   <span aria-hidden="true" id="opens-in-new-window" class="element-invisible">(Opens in new window)</span>
   <div [id]="getWrapperId(i)" *ngFor="let item of data let i = index" class="ui styled accordion accordion-container"> 
-    <div [attr.aria-describedby]="getStatusId(i)" role="button" tabindex="0" [attr.aria-expanded]="isExpanded(i)" (click)="setActiveIndex(i)" [className]="getAccordionClass(item.currentstatus)" [ngClass]="{'active': i==activeIndex}" class="title">
+    <div [attr.aria-describedby]="getStatusId(i)" role="button" tabindex="0" [attr.aria-disabled]="isExpanded(i)" [attr.aria-expanded]="isExpanded(i)" (click)="setActiveIndex(i)" [className]="getAccordionClass(item.currentstatus)" [ngClass]="{'active': i==activeIndex}" class="title">
         <i aaria-hidden="true" class="dropdown icon"></i>
         <i [ngClass]="getGenderRole(item.gender)"></i> Patient No. {{item.patientnumber}}
       </div>
