@@ -26,7 +26,7 @@
         <h3 style="color: green;">Recovered : {{recoveredSummary}}</h3>
         <h3 style="color: grey;">Deceased : {{deceasedSummary}}</h3>
   <br>
-  <app-search (change) = "setViewFlag('false')" (stateEmit)="setState($event)" (districtEmit)="setDistrict($event)" ></app-search>
+  <app-search (change) = "setViewFlag('false')" (zoneEmit)="setZone($event)" (stateEmit)="setState($event)" (districtEmit)="setDistrict($event)" ></app-search>
 
   <br>
 
@@ -37,15 +37,25 @@
     <br><br><br>
     <div tabindex="-1" id="Patientstable">
     <ng-container  *ngIf="viewFlag"> 
-    <h3 *ngIf="filteredData.length"> Total Cases in {{searchDistrictTerm}} : {{filteredData.length}} </h3>
+    <h3 [ngStyle]="{'color': zoneTerm}" *ngIf="filteredData.length"> {{zoneTerm}} ZONE ACCORDING TO LOCKDOWN 3.0 CLASSIFICATION.</h3>
+    <h3 *ngIf="filteredData.length"> Total Cases in {{searchDistrictTerm}} : {{confirmed}} </h3>
     <h3 *ngIf="filteredData.length"> Recovered : {{recovered}} </h3>
     <h3 *ngIf="filteredData.length"> Hospitalized : {{hospitalized}} </h3>
     <h3 *ngIf="filteredData.length"> Deaths : {{deceased}} </h3>
     <h3 *ngIf="filteredData.length"> Status not Disclosed : {{statusNotDisclosed}} </h3>
     
 
-    <h3 *ngIf="filteredData.length == 0  && status"> <b>No cases reported so far. <br>
-      Follow government guidelines. <br> Keep yourself safe from COVID-19.</b> </h3>  
+    <h3 [ngStyle]="{'color': zoneTerm}" *ngIf="filteredData.length == 0  && status"> 
+        <b>
+          {{zoneTerm}} ZONE ACCORDING TO LOCKDOWN 3.0 CLASSIFICATION.
+          <br>
+          No cases reported so far. 
+          <br>
+          Follow government guidelines. 
+          <br> 
+          Keep yourself safe from COVID-19.
+       </b> 
+  </h3>  
     
       <div >
         <app-table    [data]="filteredData"></app-table>
